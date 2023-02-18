@@ -1,0 +1,35 @@
+version: "3.0"
+
+services:
+  nginx:
+    build:
+      dockerfile: ./.docker/nginx/Dockerfile
+    container_name: nginx
+    ports:
+      - 8080:80
+    networks:
+      - bridge
+  app:
+    build:
+      dockerfile: ./.docker/app/Dockerfile.prod
+    container_name: app
+    ports:
+      - 3000:3000
+    networks:
+      - bridge
+
+  db:
+    build:
+      dockerfile: ./.docker/mysql/Dockerfile
+    container_name: db
+    volumes:
+      - .docker/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    networks:
+      - bridge
+
+
+networks:
+  bridge:
+    driver: bridge

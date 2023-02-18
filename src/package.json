@@ -1,0 +1,20 @@
+{
+  "name": "fullcycle-desafio2",
+  "version": "1.0.0",
+  "description": "Site simples para resolucao do desafio2 fullcycle",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/nodemon app.js",
+    "prod": "node app.js"
+  },
+  "author": "Henrique Zerbini",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

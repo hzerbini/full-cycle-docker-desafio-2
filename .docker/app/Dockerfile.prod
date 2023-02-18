@@ -1,0 +1,11 @@
+FROM node:current
+
+WORKDIR /app
+
+COPY ./src /app
+
+RUN npm install --production
+
+EXPOSE 3000
+
+ENTRYPOINT ["npm", "run", "prod"]
